@@ -1,6 +1,7 @@
 const {User, Profile, Post} = require(`../models`)
 class Controller {
-
+    
+    static landingPage(req,res){
         try {
             res.render('landingPage')
         } catch (error) {
