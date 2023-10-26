@@ -1,9 +1,17 @@
 class Controller {
-    static home(req, res) {
+    static login(req, res) {
         try {
-            res.send(`HALOOO HOME`)
+            res.render('login');
+            
         } catch (error) {
-            console.log(error.message)
+            res.send(error.message)
+        }
+      }
+
+    static async landing(req,res){
+        try {
+            res.render('landing')
+        } catch (error) {
             res.send(error.message)
         }
     }
