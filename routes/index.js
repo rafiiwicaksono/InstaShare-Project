@@ -23,7 +23,7 @@ router.get('/profile/:id/edit', Controller.editProfile)//edit profile
 router.post('/profile/:id/edit', Controller.updateProfile)
 
 
-// router.get('/logout')//logout
+router.get('/logout',Controller.logout)//logout
 
 
 
