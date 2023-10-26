@@ -2,9 +2,10 @@ const express = require('express')
 const Controller = require('../controllers')
 const router = express.Router()
 
-router.get(`/`, Controller.home)
-router.get(`/`,)
-router.get(`/`,)
-router.get(`/`,)
+router.get('/',(req,res) => {
+    res.redirect('/login')
+})
+
+router.get('/login',Controller.login)
 
 module.exports = router
