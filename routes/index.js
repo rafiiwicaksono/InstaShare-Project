@@ -2,10 +2,10 @@ const express = require('express')
 const Controller = require('../controllers')
 const router = express.Router()
 
-router.get('/',Controller.redirect)//redirect ke login
+router.get('/',Controller.landingPage)//redirect ke login
 
 router.get('/login',Controller.login)//isi Users
-router.post('/login',Controller)
+router.post('/login',Controller.postLogin)
 
 router.get('/signup',Controller)//isi Profile dan User
 router.post('/signup',Controller)

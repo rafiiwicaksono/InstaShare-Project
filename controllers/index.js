@@ -1,8 +1,8 @@
 class Controller {
 
-    static redirect(req,res){
+    static landingPage(req,res){
         try {
-            res.redirect('/login')
+            res.render('landingPage')
         } catch (error) {
             res.send(error.message)
         }
@@ -12,6 +12,15 @@ class Controller {
         try {
             res.render('login');
             
+        } catch (error) {
+            res.send(error.message)
+        }
+      }
+
+      static async postLogin(req,res){
+        try {
+            console.log(req.body)
+            res.redirect('/post')
         } catch (error) {
             res.send(error.message)
         }
