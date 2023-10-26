@@ -7,12 +7,13 @@ router.get('/',Controller.redirect)//redirect ke login
 router.get('/login',Controller.login)//isi Users
 router.post('/login',Controller)
 
-router.get('/signup',Controller)//isi Profile dan User
-router.post('/signup',Controller)
+router.get('/signup',Controller.signup)//isi Profile dan User
+router.post('/signup',Controller.signupPost)
 
-router.get('/home',Controller)//menampilkan Post,addPost dan button menuju profile
+router.get('/home',Controller.home)//menampilkan Post,addPost dan button menuju profile
 
 router.get('/home/profile',Controller)//menampilkan profile
+router.get(`/home/incerement/:id`)//nambah like post
 
 router.get('/home/profile/edit',Controller)//edit profile
 router.post('/home/profile/edit',Controller)

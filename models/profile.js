@@ -2,6 +2,7 @@
 const {
   Model
 } = require('sequelize');
+const helper = require('../helper');
 module.exports = (sequelize, DataTypes) => {
   class Profile extends Model {
     /**
@@ -12,13 +13,70 @@ module.exports = (sequelize, DataTypes) => {
     static associate(models) {
       Profile.belongsTo(models.User)
     }
+    get formatName() {
+      return helper.formatName(this.gender, this.firstName, this.lastName)
+    }
   }
   Profile.init({
-    firstName: DataTypes.STRING,
-    lastName: DataTypes.STRING,
-    dateOfBirth: DataTypes.DATE,
-    gender: DataTypes.STRING,
-    phone: DataTypes.STRING,
+    firstName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: `First Name is Required`
+        }, notEmpty: {
+          msg: `First Name is Required`
+        }
+      }
+    },
+    lastName: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: `Last Name is Required`
+        }, notEmpty: {
+          msg: `Last Name is Required`
+        }
+      }
+    },
+    dateOfBirth: {
+      type: DataTypes.DATE,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: `Date of Birth is Required`
+        }, notEmpty: {
+          msg: `Date of Birth is Required`
+        },
+        isBefore: {
+          args: new Date(new Date().setFullYear(new Date().getFullYear() - 12)).toString(),
+          msg: `Age Minimum 12 Years`
+        } 
+      }
+    },
+    gender: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: `Gender is Required`
+        }, notEmpty: {
+          msg: `Gender is Required`
+        }
+      }
+    },
+    phone: {
+      type: DataTypes.STRING,
+      allowNull: false,
+      validate: {
+        notNull: {
+          msg: `Phone Number is Required`
+        }, notEmpty: {
+          msg: `Phone Number is Required`
+        }
+      }
+    },
     bio: DataTypes.STRING,
     profilePicture: DataTypes.STRING,
     UserId: DataTypes.INTEGER
