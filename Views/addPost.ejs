@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Add Post</title>
+</head>
+<body>
+    <h1>Add New Post</h1>
+
+    <form action="/home/addPost" method="post">
+        <p>
+            <label>Username</label>
+            <br>
+            <select name="UserId">
+                <option value="">select...</option>
+                <% user.forEach(data => { %>
+                    <option value="<%= data.id %>"><%= data.username %></option>
+                <% }) %>
+            </select>
+        </p>
+
+        <p>
+            <label>Caption</label>
+            <br>
+            <input type="text" name="caption" placeholder="Input Caption...">
+        </p>
+
+        <p>
+            <label>Photo</label>
+            <br>
+            <input type="text" name="imgUrl" placeholder="Input ImageUrl...">
+        </p>
+
+        <button type="submit">Add</button>
+    </form>
+</body>
+</html>
