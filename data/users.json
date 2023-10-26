@@ -1,0 +1,32 @@
+[
+    {
+        "username":"gamakichi",
+        "email":"gamakichi@gmail.com",
+        "password":"gamakchi123",
+        "role": "basic"
+    },
+    {
+        "username":"gamabunta",
+        "email":"gamabunta@rocketmail.com",
+        "password":"qwerty1",
+        "role": "verified"
+    },
+    {
+        "username":"Nabil",
+        "email":"nabil3@gmail.com",
+        "password":"speasiality",
+        "role": "basic"
+    },
+    {
+        "username":"nabilah",
+        "email":"nabilah27@gmail.com",
+        "password":"nabnab",
+        "role": "verified"
+    },
+    {
+        "username":"Dias",
+        "email":"diasganteng@gmail.com",
+        "password":"gueganteng69",
+        "role": "verified"
+    }
+]
