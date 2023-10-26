@@ -3,12 +3,12 @@
         "username":"gamakichi",
         "email":"gamakichi@gmail.com",
         "password":"gamakchi123",
-        "role": "basic"
+        "role": "user"
     },
     {
         "username":"gamabunta",
         "email":"gamabunta@rocketmail.com",
         "password":"qwerty1",
-        "role": "verified"
+        "role": "admin"
     }
 ]

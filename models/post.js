@@ -13,7 +13,15 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Post.belongsTo(models.User)
       Post.hasMany(models.Like)
-      Post.belongsToMany(models.User, {through: `UserLike`})
+      Post.belongsToMany(models.User, { through: `UserLike` })
+    }
+
+    static deletePostMethod(req) {
+      return this.destroy({
+        where: {
+          id: req.params.id
+        }
+      })
     }
   }
   Post.init({

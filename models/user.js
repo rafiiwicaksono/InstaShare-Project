@@ -65,5 +65,18 @@ module.exports = (sequelize, DataTypes) => {
     sequelize,
     modelName: 'User',
   });
+
+  User.beforeCreate((instance) => {
+    if (instance.role === `basic`) {
+      instance.role = `user` 
+    } else if (instance.role === `verified`) {
+      instance.role = `admin` 
+    }
+  })
+
+  User.afterCreate((instance) => {
+    console.log(instance)
+  })
+
   return User;
 };
