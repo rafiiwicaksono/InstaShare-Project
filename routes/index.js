@@ -11,14 +11,17 @@ router.get('/signup',Controller.signup)//isi Profile dan User
 router.post('/signup',Controller.signupPost)
 
 router.get('/home',Controller.home)//menampilkan Post,addPost dan button menuju profile
+router.get(`/home/:id/like`, Controller.likePost)//nambah like post
+router.get(`/home/:id/delete`, Controller.deletePost)
+router.get('/home/addPost', Controller.addPost)//form nambahin post
+router.post('/home/addPost', Controller.createPost)
 
-// router.get(`/home/incerement/:id`)//nambah like post
 
-// router.get('/home/profile/edit',Controller)//edit profile
-// router.post('/home/profile/edit',Controller)
+router.get('/profile', Controller.profile)//menampilkan profile
 
-// router.get('/addPost')//form nambahin post
-// router.post('/addPost')
+router.get('/profile/:id/edit', Controller.editProfile)//edit profile
+router.post('/profile/:id/edit', Controller.updateProfile)
+
 
 // router.get('/logout')//logout
 

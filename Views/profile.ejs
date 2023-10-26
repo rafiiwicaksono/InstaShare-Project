@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Profile</title>
+</head>
+<body>
+    <h1>Profile InstaShare</h1>
+
+    <p>
+        <a href="/home">Home</a>||
+        <a href="/profile">Profile</a>
+    </p>
+
+    <table border="1">
+        <thead>
+            <tr>
+                <th>No</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Bio</th>
+                <th>Profile Picture</th>
+                <th>Action</th>
+            </tr>
+        </thead>
+
+        <tbody>
+            <% profile.forEach((data, i) => { %>
+                <tr>
+                    <td><%= ++i %></td>
+                    <td><%= data.formatName %></td>
+                    <td><%= data.phone %></td>
+                    <td><%= data.bio %></td>
+                    <td>
+                        <img src="<%= data.profilePicture %>" alt="gambar" style="width: 30%;height: 30%;">
+                    </td>
+                    <td>
+                        <a href="/profile/<%= data.id %>/edit">Edit Profile</a>
+                    </td>
+                </tr>
+            <% }) %>
+            
+        </tbody>
+    </table>
+</body>
+</html>
