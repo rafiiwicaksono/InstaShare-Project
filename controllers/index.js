@@ -1,8 +1,8 @@
 const {User, Profile, Post} = require(`../models`)
 class Controller {
-    static redirect(req, res) {
+
         try {
-            res.redirect('/login')
+            res.render('landingPage')
         } catch (error) {
             res.send(error.message)
         }
@@ -64,6 +64,15 @@ class Controller {
     }
 
 
+
+      static async postLogin(req,res){
+        try {
+            console.log(req.body)
+            res.redirect('/post')
+        } catch (error) {
+            res.send(error.message)
+        }
+      }
 
 }
 
