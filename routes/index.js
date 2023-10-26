@@ -16,12 +16,14 @@ router.get(`/home/:id/delete`, Controller.deletePost)
 router.get('/home/addPost', Controller.addPost)//form nambahin post
 router.post('/home/addPost', Controller.createPost)
 
+
 router.get('/profile', Controller.profile)//menampilkan profile
 
 router.get('/profile/:id/edit', Controller.editProfile)//edit profile
 router.post('/profile/:id/edit', Controller.updateProfile)
 
-router.get('/logout')//logout
+
+// router.get('/logout')//logout
 
 
 

@@ -1,19 +1,12 @@
+
 const {User, Profile, Post} = require(`../models`)
 const { Op } = require("sequelize");
+
 class Controller {
-    
-    static landingPage(req,res){
+
+    static landingPage(req, res) {
         try {
             res.render('landingPage')
-        } catch (error) {
-            res.send(error.message)
-        }
-    }
-
-    static login(req, res) {
-        try {
-            res.render('login');
-
         } catch (error) {
             res.send(error.message)
         }
@@ -29,9 +22,9 @@ class Controller {
       }
 
     static signup(req, res) {
-        let {errors} = req.query
+        let { errors } = req.query
         try {
-            res.render('signup', {errors})
+            res.render('signup', { errors })
         } catch (error) {
             console.log(error.message)
             res.send(error.message)
@@ -40,16 +33,18 @@ class Controller {
 
     static async signupPost(req, res) {
         try {
-            const {username, email, password, role, firstName, lastName, dateOfBirth, gender, phone, profilePicture} = req.body
-            let user = await User.create({username, email, password, role})
-            if (user.id) {
-                await Profile.create({firstName, lastName, dateOfBirth, gender, phone, profilePicture, UserId: user.id})
+            console.log(req.body)
+            const { username, email, password, role, firstName, lastName, dateOfBirth, gender, phone, profilePicture } = req.body
+            let user = await User.create({ username, email, password, role })
+            // console.log(user)
+            if (user) {
+                await Profile.create({ firstName, lastName, dateOfBirth, gender, phone, profilePicture, UserId: user.id })
                 res.redirect(`/login`)
             } else {
                 res.redirect(`/signup`)
             }
         } catch (error) {
-            if(error.name === `SequelizeValidationError`) {
+            if (error.name === `SequelizeValidationError`) {
                 let errors = error.errors.map((isi) => {
                     return isi.message
                 })
@@ -92,6 +87,7 @@ class Controller {
         }
     }
 
+
     static async createPost(req, res) {
         try {
             const {UserId, caption, imgUrl} = req.body
@@ -121,11 +117,13 @@ class Controller {
         try {
             await Post.deletePostMethod(req)
             res.redirect(`/home`)
+
         } catch (error) {
             console.log(error.message)
             res.send(error.message)
         }
     }
+
 
     static async profile(req, res) {
         try {
@@ -165,6 +163,7 @@ class Controller {
 
 
       
+
 
 }
 
