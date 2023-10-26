@@ -1,0 +1,20 @@
+[
+    {
+        "firstName":"gamakichi",
+        "lastName":"kodok",
+        "dateOfBirth":"01-02-2000",
+        "gender": "Female",
+        "phone":"0826261",
+        "bio":"Kodok Jago",
+        "UserId": "1"
+    },
+    {
+        "firstName":"gamabunta",
+        "lastName":"kitik",
+        "dateOfBirth":"05-9-1998",
+        "gender": "Male",
+        "phone":"08616232",
+        "bio":"Kadok Ganas",
+        "UserId": "2"
+    }
+]

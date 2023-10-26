@@ -33,7 +33,8 @@ module.exports = {
         type: Sequelize.STRING
       },
       profilePicture: {
-        type: Sequelize.STRING
+        type: Sequelize.STRING,
+        defaultValue: 'https://soccerpointeclaire.com/wp-content/uploads/2021/06/default-profile-pic-e1513291410505.jpg'
       },
       createdAt: {
         allowNull: false,
