@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       // define association here
       Post.belongsTo(models.User)
       Post.hasMany(models.Like)
+      Post.belongsToMany(models.User, {through: `UserLike`})
     }
   }
   Post.init({

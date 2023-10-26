@@ -10,8 +10,6 @@ module.exports = (sequelize, DataTypes) => {
      * The `models/index` file will call this method automatically.
      */
     static associate(models) {
-      Like.belongsToMany(models.User)
-      Like.belongsToMany(models.Post)
     }
   }
   Like.init({

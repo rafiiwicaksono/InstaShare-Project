@@ -13,6 +13,7 @@ module.exports = (sequelize, DataTypes) => {
       User.hasOne(models.Profile)
       User.hasMany(models.Post)
       User.hasMany(models.Like)
+      User.belongsToMany(models.Post, {through: `PostLike`})
     }
   }
   User.init({
